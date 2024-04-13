@@ -9,18 +9,14 @@ public class MovingPlatform : MonoBehaviour
     public Transform endPos; // EndPosition
     public float speed = 1.0f; // Platform Move Speed
     public float arrivalThreshold = 0.1f; // Wiggle room for start/end
+    public float jumpForce = 6f;
 
     private Vector3 targetPos; // The current target position
-    private Vector3 lastPosition; // The last recorded position of the platform
-    private Vector3 platformVelocity; // Track platform veloicty
-
 
     void Start()
     {
         // Set the initial target position to the end position
         targetPos = endPos.position;
-
-        lastPosition = transform.position;
     }
 
     void Update()
@@ -38,23 +34,17 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    void OnCollisionStay(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         // Check if the collision is with the player
         if (collision.gameObject.CompareTag("Player"))
         {
             Rigidbody playerRigidbody = collision.gameObject.GetComponent<Rigidbody>();
 
-            // Calculate platform's velocity since the last frame
-            platformVelocity = (transform.position - lastPosition) / Time.deltaTime;
-
-            // Set player's velocity to platform's velocity
-            playerRigidbody.velocity = platformVelocity;
-
-            print($"player: {playerRigidbody.velocity} + platform: {platformVelocity}");
-
-            // Update the last platform position for the next frame
-            lastPosition = transform.position;
+            // Set jump velocity
+            Vector3 newVelocity = playerRigidbody.velocity;
+            newVelocity.y = jumpForce;
+            playerRigidbody.velocity = newVelocity;
         }
     }
 }
