@@ -7,6 +7,7 @@ public class Epipen : MonoBehaviour
 {
     public float spinSpeed = 50f;
     public GameObject epipenRenderer;
+    public PlayerHealth health;
     private AudioSource audioSource;
     private Collider collider;
     private string nextScene;
@@ -37,6 +38,7 @@ public class Epipen : MonoBehaviour
     
     void GrabEpipen()
     {
+        health.StopAllCoroutines();
         collider.enabled = false;
         audioSource.Play();
         epipenRenderer.SetActive(false);

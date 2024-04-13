@@ -33,7 +33,7 @@ public class Bee : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(20f); // Wait for 20 seconds
+            yield return new WaitForSeconds(15f); // Wait for 20 seconds
             IncreaseSeverity();
         }
     }
