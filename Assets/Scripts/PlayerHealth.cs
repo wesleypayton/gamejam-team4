@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public float Health, MaxHealth;
 
     [SerializeField]
+    
     private HealthBarUI healthBar;
     // Start is called before the first frame update
     void Start()
@@ -18,11 +20,11 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("m")) {
-            SetHealth(-20f);
+            SetHealth(-2.5f);
         }
 
         if (Input.GetKeyDown("n")) {
-            SetHealth(20f);
+            SetHealth(2.5f);
         }
         
     }
@@ -32,4 +34,5 @@ public class PlayerHealth : MonoBehaviour
         Health = Mathf.Clamp(Health, 0, MaxHealth);
         healthBar.SetHealth(Health);
     }
+    
 }
