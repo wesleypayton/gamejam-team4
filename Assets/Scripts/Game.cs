@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    public Player player;
     public PlayerHealth health;
-    public Epipen epipen;
 
     void Start()
     {
