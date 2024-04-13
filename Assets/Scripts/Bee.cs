@@ -25,7 +25,7 @@ public class Bee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // This coroutine increases severity level every set time interval
@@ -40,27 +40,34 @@ public class Bee : MonoBehaviour
 
     public void IncreaseSeverity()
     {
-        print("Severity Increased" + severity.ToString());
+        print("Severity Increased: " + severity.ToString());
         // Increment severity level
         switch (severity)
         {
             case SeverityLevel.Low:
                 severity = SeverityLevel.Medium;
+                // Change bee particles to medium density
+
                 break;
             case SeverityLevel.Medium:
                 severity = SeverityLevel.High;
+                // Change bee particles to high density density
+
                 break;
             case SeverityLevel.High:
-                // Already at the highest severity level, do nothing
+                // Already at the highest severity level, do not increase
+
                 break;
             default:
                 break;
         }
     }
-
+    
+    // Decrease severity to low when contacting flower station
     public void DecreaseSeverity()
     {
-        // Set severity to lowest level when contacting flower station
         severity = SeverityLevel.Low;
+
+        // Set bee particles to low density
     }
 }
