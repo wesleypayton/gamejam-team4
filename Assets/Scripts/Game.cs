@@ -5,10 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    private void Awake() {
-        SoundManager.Initialize();
-    }
-
+    public Player player;
+    
     void Start()
     {
         
