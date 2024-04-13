@@ -30,11 +30,27 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+
+    [Header("Audio")]
+    public AudioClip jump;
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        // Get the AudioSource component attached to the player GameObject
+        audioSource = GetComponent<AudioSource>();
+
+        // Check if the AudioSource component is found
+        if (audioSource == null)
+        {
+            // If AudioSource component is missing, add it
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
     }
 
     // Update is called once per frame
@@ -82,6 +98,10 @@ public class PlayerMovement : MonoBehaviour
         //on ground
         if(grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            /*if (rb.velocity.magnitude > 0.1f && !GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().PlayOneShot(jump);
+            }*/
 
         //in air
         else if(!grounded)
@@ -107,6 +127,10 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+        //play jump sound
+        Debug.Log("Playing jump sound");
+        audioSource.PlayOneShot(jump);
     }
 
     private void ResetJump()
