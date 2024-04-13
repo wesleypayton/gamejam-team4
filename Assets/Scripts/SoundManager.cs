@@ -19,10 +19,16 @@ public static class SoundManager
         //create a gameobject with an audio component
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        
+
         //Plays sound once
-        //audioSource.PlayOneShot();
+        //audioSource.PlayOneShot(SoundAssets.sting);
     }
 
+    private static void AudioClip(Sound sound) {
+        //foreach (SoundAsset.SoundAudioClip soundAudioClip in SoundAsset.soundAudioClipArray)
+        //return true;
+    }
+
+    
 
 }
