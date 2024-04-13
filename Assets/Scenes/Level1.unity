@@ -5827,7 +5827,7 @@ Transform:
   m_GameObject: {fileID: 196084629}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.97, y: 14.87, z: 0}
+  m_LocalPosition: {x: -59.92, y: 14.87, z: -0}
   m_LocalScale: {x: 10, y: 3, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7474,7 +7474,7 @@ Transform:
   m_GameObject: {fileID: 824010371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.97, y: 14.87, z: -0}
+  m_LocalPosition: {x: -30, y: 14.87, z: 0}
   m_LocalScale: {x: 50, y: 3, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9215,12 +9215,13 @@ PrefabInstance:
     - target: {fileID: 2506242407497389581, guid: 7bf29f1e3ab594c43b483b1124b3069c,
         type: 3}
       propertyPath: m_text
-      value: This is an EpiPen. These protect you from anaphalatic shock
+      value: This is an EpiPen. These protect you from anaphalatic shock and are
+        your objective in the level.
       objectReference: {fileID: 0}
     - target: {fileID: 2506242407497389581, guid: 7bf29f1e3ab594c43b483b1124b3069c,
         type: 3}
       propertyPath: m_fontSize
-      value: 25
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2506242407497389581, guid: 7bf29f1e3ab594c43b483b1124b3069c,
         type: 3}
@@ -9240,7 +9241,7 @@ PrefabInstance:
     - target: {fileID: 2506242407497389581, guid: 7bf29f1e3ab594c43b483b1124b3069c,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 25
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2506242407497389581, guid: 7bf29f1e3ab594c43b483b1124b3069c,
         type: 3}
@@ -21863,19 +21864,17 @@ PrefabInstance:
     - target: {fileID: 2506242407497389581, guid: 7bf29f1e3ab594c43b483b1124b3069c,
         type: 3}
       propertyPath: m_text
-      value: 'This is a flower.
-
-        Flowers attract bees.'
+      value: Use flowers to lower the amount of bees upon yourself temporarily.
       objectReference: {fileID: 0}
     - target: {fileID: 2506242407497389581, guid: 7bf29f1e3ab594c43b483b1124b3069c,
         type: 3}
       propertyPath: m_fontSize
-      value: 25
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2506242407497389581, guid: 7bf29f1e3ab594c43b483b1124b3069c,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 25
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2506242407497389581, guid: 7bf29f1e3ab594c43b483b1124b3069c,
         type: 3}
@@ -21885,7 +21884,7 @@ PrefabInstance:
     - target: {fileID: 5751382710178405425, guid: 7bf29f1e3ab594c43b483b1124b3069c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 6.636
+      value: 6.663
       objectReference: {fileID: 0}
     - target: {fileID: 8549345221168317106, guid: 7bf29f1e3ab594c43b483b1124b3069c,
         type: 3}
