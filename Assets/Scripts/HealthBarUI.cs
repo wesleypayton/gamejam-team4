@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class HealthBarUI : MonoBehaviour
 {
     public float Health, MaxHealth, Width, Height;
-    public Color FullHealthColor;
-    public Color DamagedHealthColor;
+    public Color LowSeverityColor;
+    public Color MediumSeverityColor;
+    public Color HighSeverityColor;
 
     [SerializeField]
     private RectTransform healthBar;
@@ -16,6 +17,7 @@ public class HealthBarUI : MonoBehaviour
     private void Awake()
     {
         healthBarImage = healthBar.GetComponent<Image>();
+        healthBarImage.color = LowSeverityColor;
     }
 
     public void SetMaxHealth(float maxHealth)
@@ -32,7 +34,7 @@ public class HealthBarUI : MonoBehaviour
 
         // Adjust color transparency based on health
         float healthPercentage = Health / MaxHealth;
-        healthBarImage.color = Color.Lerp(DamagedHealthColor, FullHealthColor, healthPercentage);
+        //healthBarImage.color = Color.Lerp(HighSeverityColor, LowSeverityColor, healthPercentage);
     }
 }
 
