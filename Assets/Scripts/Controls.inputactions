@@ -1,0 +1,34 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Action",
+            "id": "8222a17d-41f6-4983-939c-479767182aff",
+            "actions": [
+                {
+                    "name": "JumpKey",
+                    "type": "Button",
+                    "id": "266f87b1-a424-451c-8f27-764eefd85b19",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e586e9c6-faee-45ca-aa7e-e7e86465244e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JumpKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
