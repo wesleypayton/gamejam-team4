@@ -150,6 +150,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Check if the collision is with a ground object (you may need to adjust the tag or layer)
+        if (collision.gameObject.CompareTag("trampoline"))
+        {
+            // Play the landing sound
+            if (jump != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(jump);
+            }
+        }
+    }
+
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
