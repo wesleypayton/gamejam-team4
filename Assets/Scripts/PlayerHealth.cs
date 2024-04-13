@@ -71,15 +71,15 @@ public class PlayerHealth : MonoBehaviour
             // Adjust decrease amount based on bee severity
             if (bee.severity == Bee.SeverityLevel.Low)
             {
-                decreaseAmount = 1.5f;
+                decreaseAmount = 1f;
             }
             else if (bee.severity == Bee.SeverityLevel.Medium)
             {
-                decreaseAmount = 2.5f;
+                decreaseAmount = 2f;
             }
             else if (bee.severity == Bee.SeverityLevel.High)
             {
-                decreaseAmount = 3.5f;
+                decreaseAmount = 3f;
             }
 
             SetHealth(-decreaseAmount);
