@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NotTheBees : MonoBehaviour
+public class FlowerBees : MonoBehaviour
 {
 	public ParticleSystem bees;
 	
