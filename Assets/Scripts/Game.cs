@@ -20,4 +20,9 @@ public class Game : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
