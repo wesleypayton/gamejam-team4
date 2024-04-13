@@ -31,8 +31,13 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    public float footstepThreshold = 0.1f; // Velocity threshold for playing footstep sound
+    private bool isWalking = false; // Flag to track if the player is walking
+
+
     [Header("Audio")]
     public AudioClip jump;
+    public AudioClip walk;
     private AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -67,6 +72,25 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+
+        // Check if the player is grounded and moving
+        if (grounded && rb.velocity.magnitude > footstepThreshold)
+        {
+            if (!isWalking)
+            {
+                isWalking = true;
+                PlayFootstepSound();
+            }
+            
+        }
+        else
+        {
+            if (isWalking)
+            {
+                isWalking = false;
+                StopFootstepSound();
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -98,16 +122,32 @@ public class PlayerMovement : MonoBehaviour
         //on ground
         if(grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-            /*if (rb.velocity.magnitude > 0.1f && !GetComponent<AudioSource>().isPlaying)
-            {
-                GetComponent<AudioSource>().PlayOneShot(jump);
-            }*/
 
         //in air
         else if(!grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
 
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+    }
+
+    // Method to play the footstep sound
+    private void PlayFootstepSound()
+    {
+        if (walk != null && audioSource != null)
+        {
+            audioSource.clip = walk;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+    }
+
+    // Method to stop the footstep sound
+    private void StopFootstepSound()
+    {
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+        }
     }
 
     private void SpeedControl()
@@ -129,7 +169,6 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
         //play jump sound
-        Debug.Log("Playing jump sound");
         audioSource.PlayOneShot(jump);
     }
 
