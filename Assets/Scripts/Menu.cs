@@ -5,18 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public GameObject startButton;
-    public GameObject levelSelection;
+    public GameObject panel1;
+    public GameObject panel2;
 
     void Start()
     {
-        
+        panel1.SetActive(true);
+        panel2.SetActive(false);
     }
 
-    public void StartGame()
+    public void LevelSelect()
     {
-        startButton.SetActive(false);
-        levelSelection.SetActive(true);
+        panel1.SetActive(false);
+        panel2.SetActive(true);
     }
 
     public void LoadLevel1()
@@ -35,5 +36,17 @@ public class Menu : MonoBehaviour
     {
         // Load level 1
         SceneManager.LoadScene("Level3");
+    }
+
+    public void Back() {
+        panel2.SetActive(false);
+        panel1.SetActive(true);
+
+    }
+
+    public void LoadMainMenu() 
+    {
+        // Load Main Menu
+        SceneManager.LoadScene("Menu");
     }
 }
