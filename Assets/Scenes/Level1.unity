@@ -436,7 +436,7 @@ Transform:
   m_GameObject: {fileID: 73529074}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 4.216, y: 16.79, z: -1.32}
+  m_LocalPosition: {x: 4.216, y: 16.38, z: -1.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4272,7 +4272,7 @@ Transform:
   m_GameObject: {fileID: 1250065160}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 4.216, y: 16.79, z: -1.32}
+  m_LocalPosition: {x: 4.216, y: 16.38, z: -1.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7599,11 +7599,11 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0.28956345
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Position: {x: -0.0000015179328, y: 2.0400217, z: -0.000000022813861}
+    m_Rotation: {x: -0, y: 0.0024196662, z: 0}
+    m_Scale: {x: 0.38481605, y: 0.38481605, z: 0.38481596}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -7682,7 +7682,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 11.224794
       mode: 0
       spread: 0
       speed:
