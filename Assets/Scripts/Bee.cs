@@ -66,8 +66,8 @@ public class Bee : MonoBehaviour
     // Decrease severity to low when contacting flower station
     public void DecreaseSeverity()
     {
+        StopAllCoroutines();
         severity = SeverityLevel.Low;
-
-        // Set bee particles to low density
+        StartCoroutine(IncreaseSeverityRoutine());
     }
 }
