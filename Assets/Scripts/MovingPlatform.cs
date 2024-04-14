@@ -11,10 +11,18 @@ public class MovingPlatform : MonoBehaviour
     public float arrivalThreshold = 0.1f; // Wiggle room for start/end
     public float jumpForce = 6f;
 
+    private AudioSource audioSource;
     private Vector3 targetPos; // The current target position
+
+    [Header("Audio")]
+    private AudioClip jump;
 
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        jump = Resources.Load("Sounds/jump") as AudioClip;
+        audioSource.clip = jump;
+        audioSource.volume = 0.8f;
         // Set the initial target position to the end position
         targetPos = endPos.position;
     }
@@ -39,6 +47,7 @@ public class MovingPlatform : MonoBehaviour
         // Check if the collision is with the player
         if (collision.gameObject.CompareTag("Player"))
         {
+            audioSource.Play();
             Rigidbody playerRigidbody = collision.gameObject.GetComponent<Rigidbody>();
 
             // Set jump velocity
