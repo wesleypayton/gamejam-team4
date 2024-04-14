@@ -25,7 +25,7 @@ public class Bee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+		
     }
 
     // This coroutine increases severity level every set time interval
