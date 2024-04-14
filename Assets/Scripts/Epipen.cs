@@ -9,7 +9,7 @@ public class Epipen : MonoBehaviour
     public GameObject epipenRenderer;
     public PlayerHealth health;
     private AudioSource audioSource;
-    private Collider collider;
+    private new Collider collider;
     private string nextScene;
 
     void Start()
