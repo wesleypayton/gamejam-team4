@@ -5,12 +5,15 @@ using UnityEngine;
 public class FlowerBees : MonoBehaviour
 {
 	public GameObject swarm;
+    public Bee beeSeverity;
+
+	private AudioSource audioSource;
 	private float count;
 	private float increment;
-    public Bee beeSeverity;
 
     void Start()
     {
+		audioSource = GetComponent<AudioSource>();
 		count = 0;
 		increment = -1;
 		swarm.SetActive(false);
@@ -38,7 +41,8 @@ public class FlowerBees : MonoBehaviour
 	}
 	
 	// make sure the bee particle effects activate on the flower when in range
-	private void OnCollisionEnter(Collision collision){
+	private void OnTriggerEnter(Collider collider){
+		audioSource.Play();
 		swarm.SetActive(true);
         beeSeverity.DecreaseSeverity();
     }
