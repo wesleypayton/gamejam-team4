@@ -50,6 +50,11 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void Resume()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void Quit() 
     {
 #if UNITY_EDITOR
