@@ -25,7 +25,7 @@ public class Epipen : MonoBehaviour
                 nextScene = "level3";
                 break;
             case "Level3":
-                nextScene = "GameWin";
+                nextScene = "WinMenu";
                 break;
         }
     }
@@ -59,6 +59,15 @@ public class Epipen : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         // Load the desired scene
-        SceneManager.LoadScene(nextScene);
+        if (nextScene.Equals("WinMenu")) 
+        {
+            SceneManager.LoadScene(nextScene);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else {
+            SceneManager.LoadScene(nextScene);
+        }
+
     }
 }
