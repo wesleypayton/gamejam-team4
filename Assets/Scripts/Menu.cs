@@ -20,10 +20,6 @@ public class Menu : MonoBehaviour
         panel2.SetActive(true);
     }
 
-    public void Resume() 
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
     public void LoadLevel1()
     {
         // Load level 1
