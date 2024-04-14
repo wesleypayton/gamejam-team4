@@ -7,7 +7,8 @@ public class FlowerBees : MonoBehaviour
 	public GameObject swarm;
 	private float count;
 	private float increment;
-	
+    public Bee beeSeverity;
+
     void Start()
     {
 		count = 0;
@@ -39,5 +40,6 @@ public class FlowerBees : MonoBehaviour
 	// make sure the bee particle effects activate on the flower when in range
 	private void OnCollisionEnter(Collision collision){
 		swarm.SetActive(true);
-	}
+        beeSeverity.DecreaseSeverity();
+    }
 }

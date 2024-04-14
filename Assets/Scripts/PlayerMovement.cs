@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isWalking = false;
     private const float footstepThreshold = 0.1f;
 
+
     [Header("Audio")]
     public AudioClip jump;
     public AudioClip walk;

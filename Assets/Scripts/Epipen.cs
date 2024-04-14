@@ -59,6 +59,7 @@ public class Epipen : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         // Load the desired scene
+<<<<<<< Updated upstream
         if (nextScene.Equals("WinMenu")) 
         {
             SceneManager.LoadScene(nextScene);
@@ -69,5 +70,17 @@ public class Epipen : MonoBehaviour
             SceneManager.LoadScene(nextScene);
         }
 
+=======
+        if (nextScene.Equals("WinMenu"))
+        {     
+            SceneManager.LoadScene(nextScene);     
+            Cursor.lockState = CursorLockMode.None;     
+            Cursor.visible = true; 
+        }
+        else 
+        {     
+            SceneManager.LoadScene(nextScene); 
+        }
+>>>>>>> Stashed changes
     }
 }
