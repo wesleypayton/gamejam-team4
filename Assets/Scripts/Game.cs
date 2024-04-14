@@ -14,9 +14,12 @@ public class Game : MonoBehaviour
 
     void Update()
     {
-        if (health.Health <= 0f)
+        if (health != null)
         {
-            SceneManager.LoadScene("GameOver");
+            if (health.Health <= 0f)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
 
