@@ -6,13 +6,16 @@ public class FlowerBees : MonoBehaviour
 {
 	public GameObject swarm;
     public Bee beeSeverity;
+	private PlayerHealth health;
 
 	private AudioSource audioSource;
 	private float count;
 	private float increment;
+	private bool isHit = false;
 
     void Start()
     {
+		health = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PlayerHealth>();
 		audioSource = GetComponent<AudioSource>();
 		count = 0;
 		increment = -1;
@@ -42,8 +45,18 @@ public class FlowerBees : MonoBehaviour
 	
 	// make sure the bee particle effects activate on the flower when in range
 	private void OnTriggerEnter(Collider collider){
-		audioSource.Play();
-		swarm.SetActive(true);
-        beeSeverity.DecreaseSeverity();
+		if (!isHit)
+		{
+			// Add hp and limit to 100
+			health.Health += 20;
+			if (health.Health > 100)
+			{
+				health.Health = 100;
+			}
+			audioSource.Play();
+			swarm.SetActive(true);
+			beeSeverity.DecreaseSeverity();
+			isHit = true;
+		}
     }
 }
