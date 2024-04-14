@@ -56,7 +56,8 @@ public class FlowerBees : MonoBehaviour
 			audioSource.Play();
 			swarm.SetActive(true);
 			beeSeverity.DecreaseSeverity();
-			isHit = true;
+
+            isHit = true;
 		}
     }
 }
